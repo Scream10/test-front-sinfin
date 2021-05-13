@@ -1,0 +1,14 @@
+$primary: #0d6efd;
+$header: #212529;
+
+.card:active,
+.card:focus {
+  border-color: $primary;
+}
+.card-title:hover {
+  color: $primary;
+}
+.card-body a {
+  text-decoration: none;
+  color: $header;
+}

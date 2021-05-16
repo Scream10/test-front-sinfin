@@ -5,33 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #553055;
-}
-
-.App {
-  background: #4c2a4c;
-  width: 100%;
-  color: #eee;
-  height: 100vh;
-}
-
-.navbar {
-  top: 20px;
-  position: relative;
-  padding: 10px 20px;
-  margin: 0px auto;
-  text-align: center;
-  background: #6d3d6d;
-  display: flex;
-  flex-direction: column;
-  max-width: 70%;
-  h1 {
-    margin: 10px 0;
-  }
-  h1,
-  p {
-    color: white;
-  }
+  background: #fff;
 }
 
 .publication-list {
@@ -87,7 +61,7 @@ form {
     padding: 10px;
     box-sizing: border-box;
     margin: 6px 0px;
-    background: #3c1f3c;
+    background: #dedede;
     color: #fff;
     border: 0;
   }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { slice, concat } from "lodash";
 import { Link } from "react-router-dom"; 
 import { v1 as uuidv1 } from 'uuid';
+import '../styles/Home.scss';
 
 const LENGTH = 100;
 const LIMIT = 6;
@@ -44,7 +45,12 @@ function Home() {
   } else if (!loading) {
     return (
       <div className="container">
-        <h1>Nos dernières publications :</h1>
+        <header className="header">
+          <div className="header__year">1920s</div>
+          <div className="header__title">actu</div>
+          <div className="header__year">2020s</div>
+        </header>
+        <h1 className="titlePublication">Nos dernières publications :</h1>
         <hr />
         <div className="text-center my-3">Chargement...</div>
       </div>
@@ -52,24 +58,29 @@ function Home() {
   } else {
     return (
       <div className="container">
-        <h1>Nos dernières publications :</h1>
+        <header className="header">
+          <div className="header__year">1920s</div>
+          <div className="header__title">actu</div>
+          <div className="header__year">2020s</div>
+        </header>
+        <h1 className="titlePublication">Nos dernières publications :</h1>
         <hr />
         <div className="row">
           {posts.map((post) => (
             <div key={uuidv1()} className="col-lg-4 col-sm-6 mb-4">
-              <div className="card h-100">
+              <div className="cardPublication h-100">
                 <img src="https://via.placeholder.com/350x150" alt="350x150" className="card-img-top" />
-                <div className="card-body">
+                <div className="cardPublicaton__body">
                   <Link to={{pathname:`/publication/${post.id}`, state:{post, commentList:[]} }}>
-                    <h4 className="card-title">{post.title}</h4>
+                    <h4 className="cardPublication__title">{post.title}</h4>
                   </Link>
-                  <p className="card-text mb-0">{post.body}</p>
+                  <p className="cardPublication__description mb-0">{post.body}</p>
                 </div>
               </div>
             </div>
           ))}
           <div className="d-flex justify-content-center mb-5">
-            {showMore && <button onClick={loadMore} className="btn btn-primary">Charger plus</button>}
+            {showMore && <button onClick={loadMore} className="loadmore">Charger plus</button>}
           </div>
         </div>
       </div>

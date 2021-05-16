@@ -18,8 +18,6 @@ function Publication(props) {
     setComment('');
   }
 
-  console.log(publications[0]);
-
   return (
     <div className="container">
       <a href="/">Retour à la page des publications</a>
@@ -37,7 +35,10 @@ function Publication(props) {
           {publications.map(publication => {
             if(publication.publicationId === props.location.state.post.id) {
               return ( <PublicationDetail publication={publication} key={publication.id} />);
-            } 
+            } else {
+              return ( 
+              <div></div>)
+            }
           }).reverse()}
         </ul>
       </div>  

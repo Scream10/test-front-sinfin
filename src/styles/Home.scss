@@ -1,0 +1,97 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .header__title {
+    font-size: 160px;
+    margin: 20px 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: serif;
+    transform: scaleY(1.2);
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-shadow: 5px 10px #ddd;
+  }
+  .header__year {
+    position: relative;
+    margin: 50px;
+    font-weight: 400;
+    font-family: serif;
+    &:before {
+      content: "";
+      top: -3px;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: #333;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #333;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .header__year {
+      display: none;
+    }
+  }
+}
+
+.titlePublication {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 24px;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.cardPublication {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  .cardPublicaton__body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+    .cardPublication__title,
+    a {
+      color: #333;
+      text-decoration: none;
+      font-family: "Poppins", sans-serif;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .cardPublication__description {
+      color: #333;
+      font-size: 16px;
+    }
+  }
+}
+
+.loadmore {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 14px;
+  border: 1px solid #333;
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: 200ms ease-in-out;
+  background: #fff;
+  &:hover {
+    color: #fff;
+    background: #333;
+  }
+}

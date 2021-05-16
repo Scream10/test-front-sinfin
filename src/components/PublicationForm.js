@@ -5,6 +5,7 @@ const PublicationForm = () => {
   const { dispatch } = useContext(PublicationContext);
   const [pseudo, setPseudo] = useState('');
   const [comment, setComment] = useState('');
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({type: 'ADD_PUBLICATION', publication: {

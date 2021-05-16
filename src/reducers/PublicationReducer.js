@@ -8,6 +8,7 @@ export const publicationReducer = (state, action) => {
       return [...state, {
         pseudo: action.publication.pseudo,
         comment: action.publication.comment,
+        publicationId: action.publication.publicationId,
         timestamp: Date.now(),
         id: uuidv1()
       }]

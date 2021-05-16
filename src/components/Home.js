@@ -60,7 +60,7 @@ function Home() {
               <div className="card h-100">
                 <img src="https://via.placeholder.com/350x150" alt="350x150" className="card-img-top" />
                 <div className="card-body">
-                  <Link to={{pathname:`/publication/${post.id}`, state:{post} }}>
+                  <Link to={{pathname:`/publication/${post.id}`, state:{post, commentList:[]} }}>
                     <h4 className="card-title">{post.title}</h4>
                   </Link>
                   <p className="card-text mb-0">{post.body}</p>

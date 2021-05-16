@@ -4,18 +4,21 @@ import PublicationDetail from './PublicationDetail';
 
 function Publication(props) {  
   const { dispatch } = useContext(PublicationContext);
+  const { publications } = useContext(PublicationContext);
   const [pseudo, setPseudo] = useState('');
   const [comment, setComment] = useState('');
-  const { publications } = useContext(PublicationContext);
+  const publicationId = props.location.state.post.id;
   
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({type: 'ADD_PUBLICATION', publication: {
-      pseudo, comment
+      pseudo, comment, publicationId
     }});
     setPseudo('');
     setComment('');
   }
+
+  console.log(publications[0]);
 
   return (
     <div className="container">
@@ -32,7 +35,9 @@ function Publication(props) {
       <div className="publication-list">
         <ul>
           {publications.map(publication => {
-            return ( <PublicationDetail publication={publication} key={publication.id} />);
+            if(publication.publicationId === props.location.state.post.id) {
+              return ( <PublicationDetail publication={publication} key={publication.id} />);
+            } 
           }).reverse()}
         </ul>
       </div>  

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { PublicationContext } from '../contexts/PublicationContext';
 import PublicationDetail from './PublicationDetail';
+import '../styles/Publication.scss'
 
 function Publication(props) {  
   const { dispatch } = useContext(PublicationContext);
@@ -20,15 +21,22 @@ function Publication(props) {
 
   return (
     <div className="container">
-      <a href="/">Retour à la page des publications</a>
-      <h1>{props.location.state.post.title}</h1>
-      <hr className="col-sm-12 col-md-10 col-lg-8"/>
-      <p>{props.location.state.post.body}</p>
-      <hr className="col-sm-12 col-md-10 col-lg-8"/>
+      <div className="backhome">
+        <a href="/" className="backhome__title">Page d'acceuil</a>
+        <div className="backhome__underline"></div>
+      </div>
+      <div className="publication">
+        <h1 className="publication__title">{props.location.state.post.title}</h1>
+        <hr />
+        <p className="publication__description">{props.location.state.post.body}</p>
+        <hr />
+      </div>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="pseudo" value={pseudo} onChange={(e) => setPseudo(e.target.value)} required />
-        <input type="text" placeholder="comment" value={comment} onChange={(e) => setComment(e.target.value)} required />
-        <input type="submit" value="Ajouter un commentaire" />
+        <input type="text" placeholder="Pseudo" value={pseudo} onChange={(e) => setPseudo(e.target.value)} required />
+        <textarea type="text" placeholder="Comment" rows="3" value={comment} onChange={(e) => setComment(e.target.value)} required />
+        <div className="max-width">
+          <input type="submit" value="Ajouter un commentaire" />
+        </div>
       </form>
       <div className="publication-list">
         <ul>

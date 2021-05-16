@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Publication(post) {
+function Publication(props) {
   const [input, setInput] = useState('');
   const [comments, setComments] = useState([]);
   const [timestamp, setTimestamp] = useState([]);
@@ -9,7 +9,7 @@ function Publication(post) {
     event.preventDefault();
     setComments([...comments, input]);
     setInput('');
-    setTimestamp([...timestamp, new Date().getTime()])
+    setTimestamp([...timestamp, new Date().getTime()]);
   } 
 
   useEffect(() => {
@@ -20,9 +20,10 @@ function Publication(post) {
   return (
     <div className="container">
       <a href="/">Retour à la page des publications</a>
-      {post.id ? <h1>Publication n°{post.id}</h1> : <h1>Publication n°Not found</h1>}  
+      <h1>{props.location.state.post.title}</h1>
       <hr className="col-sm-12 col-md-10 col-lg-8"/>
-      <p>{post.title}</p>
+      <p>{props.location.state.post.body}</p>
+      <hr className="col-sm-12 col-md-10 col-lg-8"/>
       <form className="mb-4">
         <div className="form-group col-sm-12 col-md-10 col-lg-8">
           <label>Pseudo</label>
@@ -48,7 +49,7 @@ function Publication(post) {
       </form>
       <div>
         {comments.map((comment) => (
-          <div className="cardComment">
+          <div className="cardComment"> 
             <h6 className="cardComment__pseudo">Fake Pseudo</h6>
             <p className="cardComment__comment">{comment}</p>
           </div>

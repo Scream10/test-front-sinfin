@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { slice, concat } from "lodash";
+import { Link } from "react-router-dom"; 
 
 const LENGTH = 100;
 const DATA = [...Array(LENGTH).keys()];
 const LIMIT = 6;
 
-function Home() {
+function PublicationList() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const [showMore, setShowMore] = useState(true);
   const [posts, setPosts] = useState(slice(DATA, 0, LIMIT));
   const [index, setIndex] = useState(LIMIT);
@@ -40,7 +40,13 @@ function Home() {
   if (error) {
     return <div className="text-center my-3">Erreur : {error.message}</div>;
   } else if (!loading) {
-    return <div className="text-center my-3">Chargement...</div>
+    return (
+      <div className="container">
+        <h1>Nos dernières publications :</h1>
+        <hr />
+        <div className="text-center my-3">Chargement...</div>
+      </div>
+    )
   } else {
     return (
       <div className="container">
@@ -52,9 +58,9 @@ function Home() {
               <div className="card h-100">
                 <img src="https://via.placeholder.com/350x150" alt="350x150" className="card-img-top" />
                 <div className="card-body">
-                  <a href="/">
+                  <Link to={{pathname:`/publication/${post.id}`}} post={post}>
                     <h4 className="card-title">{post.title}</h4>
-                  </a>
+                  </Link>
                   <p className="card-text mb-0">{post.body}</p>
                 </div>
               </div>
@@ -69,4 +75,4 @@ function Home() {
   }
 }
 
-export default Home;
+export default PublicationList;

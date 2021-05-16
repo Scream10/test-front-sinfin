@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from './components/Home';
+import PublicationList from './components/PublicationList';
 import Publication from './components/Publication';
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home />
+          <PublicationList />
         </Route>
         <Route exact path="/publication/:id">
           <Publication />

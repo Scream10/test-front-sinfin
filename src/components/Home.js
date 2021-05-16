@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import { v1 as uuidv1 } from 'uuid';
 
 const LENGTH = 100;
-const DATA = [...Array(LENGTH).keys()];
 const LIMIT = 6;
 
 function Home() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(true);
-  const [posts, setPosts] = useState(slice(DATA, 0, LIMIT));
+  const [posts, setPosts] = useState(slice(0, LIMIT));
+  const [dataFetch, setDataFetch] = useState([]);
   const [index, setIndex] = useState(LIMIT);
 
   useEffect(() => {
@@ -21,6 +21,7 @@ function Home() {
         (result) => {
           setLoading(true);
           setPosts(result.slice(0, LIMIT));
+          setDataFetch(result);
         },
         (error) => {
           setLoading(true);
@@ -31,8 +32,8 @@ function Home() {
 
   const loadMore = () => {
     const newIndex = index + LIMIT;
-    const newShowMore = newIndex < LENGTH - 1;
-    const newPosts = concat(posts, slice(DATA, index, newIndex));
+    const newShowMore = newIndex < (LENGTH - 1);
+    const newPosts = concat(posts, slice(dataFetch, index, newIndex));
     setIndex(newIndex);
     setPosts(newPosts);
     setShowMore(newShowMore);

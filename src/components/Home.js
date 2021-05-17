@@ -69,7 +69,9 @@ function Home() {
           {posts.map((post) => (
             <div key={uuidv1()} className="col-lg-4 col-sm-6 mb-4">
               <div className="cardPublication h-100">
-                <img src="https://via.placeholder.com/350x150" alt="350x150" className="card-img-top" />
+                <div className="cardPublication__img">
+                  <img src="https://via.placeholder.com/350x150" alt="placeholder 350x150"/>
+                </div>
                 <div className="cardPublicaton__body">
                   <Link to={{pathname:`/publication/${post.id}`, state:{post, commentList:[]} }}>
                     <h4 className="cardPublication__title">{post.title}</h4>

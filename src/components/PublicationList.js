@@ -6,7 +6,7 @@ import { v1 as uuidv1 } from 'uuid';
 const LENGTH = 100;
 const LIMIT = 6;
 
-function Home() {
+function PublicationList() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showMore, setShowMore] = useState(true);
@@ -89,4 +89,4 @@ function Home() {
   }
 }
 
-export default Home;
+export default PublicationList;

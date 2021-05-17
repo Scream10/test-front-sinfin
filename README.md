@@ -29,3 +29,4 @@ yarn start
 
 - Vous pouvez accéder directement au test technique héberger sous vercel : [test-front-sinfin.vercel.app](https://test-front-sinfin.vercel.app/)
 - Respect des règles du web W3C : [validator.w3.org](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftest-front-sinfin.vercel.app%2F)
+- Résultat de Lighthouse sur la performance, l'accessibilité, les bonnes pratiques et le SEO : [lighthouse Report Viewer](https://googlechrome.github.io/lighthouse/viewer/?psiurl=https%3A%2F%2Ftest-front-sinfin.vercel.app%2F&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo&category=pwa&utm_source=lh-chrome-ext#performance)

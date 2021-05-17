@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { PublicationContext } from '../contexts/PublicationContext';
 import PublicationDetail from './PublicationDetail';
-import '../styles/Publication.scss'
 
 function Publication(props) {  
   const { dispatch } = useContext(PublicationContext);

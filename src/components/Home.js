@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { slice, concat } from "lodash";
 import { Link } from "react-router-dom"; 
 import { v1 as uuidv1 } from 'uuid';
-import '../styles/Home.scss';
 
 const LENGTH = 100;
 const LIMIT = 6;

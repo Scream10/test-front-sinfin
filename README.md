@@ -24,3 +24,8 @@ ou
 ```
 yarn start
 ```
+
+#### Les plus
+
+- Vous pouvez accéder directement au test technique héberger sous vercel : [test-front-sinfin.vercel.app](https://test-front-sinfin.vercel.app/)
+- Respect des règles du web W3C : [validator.w3.org](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftest-front-sinfin.vercel.app%2F)

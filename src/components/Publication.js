@@ -22,7 +22,7 @@ function Publication(props) {
   return (
     <div className="container">
       <div className="backhome">
-        <a href="/" className="backhome__title">Page d'acceuil</a>
+        <a href="/" className="backhome__title">Page d'accueil</a>
         <div className="backhome__underline"></div>
       </div>
       <div className="publication">
